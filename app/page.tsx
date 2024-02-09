@@ -11,7 +11,15 @@ export default function Home() {
           <TabsTrigger value="contact">Contact</TabsTrigger>
         </TabsList>
         <TabsContent value="home" className="flex-grow flex justify-center items-center">
-          <h1>Hello</h1>
+          {/* Separate container for the h1 text */}
+          <div className="text-center p-28">
+            <h1 className="text-8xl whitespace-nowrap">
+              Kyle Parks
+            </h1>
+            <p className="text-4xl text-center p-6">
+              Full Stack Developer
+            </p>
+          </div>
         </TabsContent>
         <TabsContent value="about">Change your password here.</TabsContent>
       </Tabs>
