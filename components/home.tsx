@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const HomePage = () => {
-   
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -26,17 +26,21 @@ const HomePage = () => {
     };
 
     return (
-        <div className="text-center p-28">
+        <div className="text-center px-4 py-8 sm:p-28">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 className="space-y-4"
             >
-                <motion.h1 variants={childVariants} className="text-8xl whitespace-nowrap">
+                <motion.h1
+                    variants={childVariants}
+                    className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl whitespace-nowrap">
                     Kyle Parks
                 </motion.h1>
-                <motion.p variants={childVariants} className="text-2xl text-center p-4">
+                <motion.p
+                    variants={childVariants}
+                    className="text-xl sm:text-3xl text-center px-4 py-2 whitespace-nowrap">
                     Full Stack Developer
                 </motion.p>
             </motion.div>
