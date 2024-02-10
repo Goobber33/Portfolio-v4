@@ -1,28 +1,21 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Home from "@/components/home";
 
 export default function Navbar() {
-  return (
-    <div className="flex justify-center items-center p-12">
-      <Tabs defaultValue="home" className="w-[300px] flex flex-col">
-        <TabsList>
-          <TabsTrigger value="home">Home</TabsTrigger>
-          <TabsTrigger value="about">About</TabsTrigger>
-          <TabsTrigger value="projects">Projects</TabsTrigger>
-          <TabsTrigger value="contact">Contact</TabsTrigger>
-        </TabsList>
-        <TabsContent value="home" className="flex-grow flex justify-center items-center">
-          {/* Separate container for the h1 text */}
-          <div className="text-center p-28">
-            <h1 className="text-8xl whitespace-nowrap">
-              Kyle Parks
-            </h1>
-            <p className="text-4xl text-center p-6">
-              Full Stack Developer
-            </p>
-          </div>
-        </TabsContent>
-        <TabsContent value="about">Change your password here.</TabsContent>
-      </Tabs>
-    </div>
-  );
+    return (
+        <div className="flex justify-center items-center p-12">
+            <Tabs defaultValue="home" className="w-[450px] flex flex-col">
+                <TabsList className="text-md">
+                    <TabsTrigger value="home" className="px-4 py-1 text-lg">Home</TabsTrigger>
+                    <TabsTrigger value="about" className="px-4 py-2 text-lg">About</TabsTrigger>
+                    <TabsTrigger value="projects" className="px-4 py-2 text-lg">Projects</TabsTrigger>
+                    <TabsTrigger value="contact" className="px-4 py-2 text-lg">Contact</TabsTrigger>
+                </TabsList>
+                <TabsContent value="home" className="flex-grow flex justify-center items-center">
+                    <Home />
+                </TabsContent>
+                <TabsContent value="about">Hello World!</TabsContent>
+            </Tabs>
+        </div>
+    );
 }

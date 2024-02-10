@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "@/components/navbar";
 import HomeLayout from "./layout";
 
-const HomePage = () => {
+const LandingPage = () => {
   return (
     <HomeLayout>
       <Navbar />
@@ -10,4 +10,4 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+export default LandingPage;
