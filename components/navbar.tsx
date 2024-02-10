@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Home from "@/components/home";
+import About from "@/components/about";
 
 export default function Navbar() {
     return (
@@ -14,7 +15,9 @@ export default function Navbar() {
                 <TabsContent value="home" className="flex-grow flex justify-center items-center">
                     <Home />
                 </TabsContent>
-                <TabsContent value="about">Hello World!</TabsContent>
+                <TabsContent value="about" className="flex-grow flex justify-center items-center">
+                    <About />
+                </TabsContent>
             </Tabs>
         </div>
     );
