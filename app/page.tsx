@@ -1,13 +1,25 @@
 import React from 'react';
 import Navbar from "@/components/navbar";
-import HomeLayout from "./layout";
+import Footer from "@/components/footer";
 
-const LandingPage = () => {
+const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <HomeLayout>
+    <div
+      style={{
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('/background.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+      }}
+      className="flex flex-col min-h-screen"
+    >
       <Navbar />
-    </HomeLayout>
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer />
+    </div>
   );
-}
+};
 
-export default LandingPage;
+export default HomeLayout;
