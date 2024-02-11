@@ -35,7 +35,7 @@ const AboutPage = () => {
         alt="Kyle Parks"
         className="rounded-full w-48 sm:w-64 md:w-72 lg:w-96" />
       <motion.div variants={childVariants} className='text-white font-extrabold text-2xl text-center lg:max-w-4xl w-96'>
-        With a focus on user-centric design, I&apos;ve dedicated myself to crafting engaging and accessible digital solutions. From concept to deployment, I enjoy every step of the creative process.
+        With a focus on user-centric design<span style={{ color: '#49c5b6' }}>,</span> I&apos;ve dedicated myself to crafting engaging and accessible digital solutions. From concept to deployment<span style={{ color: '#49c5b6' }}>,</span> I enjoy every step of the creative process.
       </motion.div>
     </motion.div> 
     <motion.div>

@@ -26,7 +26,7 @@ const HomeContent = () => {
     };
 
     return (
-        <div className="text-center px-4 py-8 sm:py-16 md:py-28">
+        <div className="text-center px-4 py-24 sm:py-16 md:py-28">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
