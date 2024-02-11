@@ -10,7 +10,6 @@ export default function Navbar() {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        // This code runs only on the client
         const storedTab = localStorage.getItem('currentTab');
         if (storedTab) {
             setCurrentTab(storedTab);
@@ -29,7 +28,6 @@ export default function Navbar() {
     };
 
     if (!isClient) {
-        // Optionally, render a placeholder or nothing while waiting for client-side hydration
         return null;
     }
 
