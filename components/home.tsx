@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-const HomePage = () => {
+const HomeContent = () => {
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -57,4 +57,4 @@ const HomePage = () => {
     );
 }
 
-export default HomePage;
+export default HomeContent;

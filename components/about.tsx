@@ -26,20 +26,23 @@ const AboutPage = () => {
   };
 
   return (
-    <motion.div variants={containerVariants}
-    initial="hidden"
-    animate="visible"className='flex justify-around lg:gap-44 md:gap-12 sm:gap-2 xs:gap-2 p-40 sm:p-22'>
+    <><motion.div variants={containerVariants}
+      initial="hidden"
+      animate="visible" className='flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-24 p-20 lg:p-40 items-center'>
       <motion.img
-          variants={childVariants}
-          src="/kyle.jpeg"
-          alt="Kyle Parks"
-          className="rounded-full max-w-max lg:h-96 lg:w-96 md:h-72 md:w-72 sm:h-48 sm:w-36 h-32 w-32"
-      />
-      <motion.div variants={childVariants} className='text-white max-w-max'>
-      With a focus on user-centric design, I&apos;ve dedicated myself to crafting engaging and accessible digital solutions. <br /> From concept to deployment, I enjoy every step of the creative process.
+        variants={childVariants}
+        src="/kyle.jpeg"
+        alt="Kyle Parks"
+        className="rounded-full w-48 sm:w-64 md:w-72 lg:w-96" />
+      <motion.div variants={childVariants} className='text-white font-extrabold text-2xl text-center lg:max-w-4xl w-96'>
+        With a focus on user-centric design, I&apos;ve dedicated myself to crafting engaging and accessible digital solutions. From concept to deployment, I enjoy every step of the creative process.
       </motion.div>
-    </motion.div>
+    </motion.div> 
+    <motion.div>
+
+      </motion.div></>
   );
 }
 
 export default AboutPage;
+
