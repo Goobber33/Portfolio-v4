@@ -1,16 +1,12 @@
 import React from 'react';
 import MainLayout from '@/components/main-layout';
 
-type PageProps = {
+interface PageProps {
   children: React.ReactNode;
-};
+}
 
-const Page = ({ children }: PageProps) => {
-  return (
-    <MainLayout >
-      {children}
-    </MainLayout>
-  );
+const Page: React.FC<PageProps> = ({ children }) => {
+  return <MainLayout>{children}</MainLayout>;
 };
 
 export default Page;
