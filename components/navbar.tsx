@@ -6,25 +6,35 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    const [currentTab, setCurrentTab] = useState(() => localStorage.getItem('currentTab') || 'home');
+    // Initialize state without assuming access to localStorage
+    const [currentTab, setCurrentTab] = useState('home');
 
+    // Effect to run only on the client side
     useEffect(() => {
-        // Save to localStorage on tab change
-        localStorage.setItem('currentTab', currentTab);
-    }, [currentTab]);
+        // Check if window is defined (i.e., running in a browser)
+        if (typeof window !== 'undefined') {
+            // Get the tab from localStorage or default to 'home'
+            const storedTab = localStorage.getItem('currentTab') || 'home';
+            setCurrentTab(storedTab);
 
-    useEffect(() => {
-        const handleBeforeUnload = () => {
-            // Set to 'home' when the user is leaving the site
-            localStorage.setItem('currentTab', 'home');
-        };
+            // Listen for beforeunload event to reset to 'home' when leaving the site
+            const handleBeforeUnload = () => {
+                localStorage.setItem('currentTab', 'home');
+            };
+            window.addEventListener('beforeunload', handleBeforeUnload);
 
-        window.addEventListener('beforeunload', handleBeforeUnload);
-
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
+            return () => {
+                window.removeEventListener('beforeunload', handleBeforeUnload);
+            };
+        }
     }, []);
+
+    // Update local storage on tab change, ensuring it's client-side
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('currentTab', currentTab);
+        }
+    }, [currentTab]);
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
