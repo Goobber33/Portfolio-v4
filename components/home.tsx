@@ -26,7 +26,7 @@ const HomeContent = () => {
     };
 
     return (
-        <div className="text-center py-24 sm:py-16 md:py-28">
+        <div className="text-center py-32 sm:py-16 md:py-28">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -43,13 +43,13 @@ const HomeContent = () => {
                 <motion.h2
                     variants={childVariants}
                     style={{ fontFamily: 'Roboto, sans-serif' }}
-                    className="text-xl sm:text-3xl md:text-4xl lg:text-5xl px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:whitespace-nowrap font-bold text-white">
+                    className="text-lg sm:text-3xl md:text-4xl lg:text-5xl px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:whitespace-nowrap font-bold text-white">
                     I AM A FULL STACK WEB DEVELOPER.
                 </motion.h2>
                 <motion.p
                     variants={childVariants}
                     style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
-                    className="text-lg sm:text-xl md:text-2xl lg:text-3xl px-2 sm:px-4 md:px-6 lg:px-8 py-10  text-white">
+                    className="text-sm sm:text-xl md:text-2xl lg:text-3xl px-2 sm:px-4 md:px-6 lg:px-8 py-10 text-white">
                     I love creating beautiful and functional web applications. <br /> Please take a look around and feel free to contact me!
                 </motion.p>
             </motion.div>
