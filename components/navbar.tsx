@@ -6,30 +6,32 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    // Initialize state with 'home' as default value
     const [currentTab, setCurrentTab] = useState('home');
+    const [isClient, setIsClient] = useState(false);
 
-    // Only run this effect on mount and when currentTab changes
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            // Get the stored value from local storage on initial load
-            const storedTab = localStorage.getItem('currentTab');
-            if (storedTab) {
-                setCurrentTab(storedTab);
-            }
+        // This code runs only on the client
+        const storedTab = localStorage.getItem('currentTab');
+        if (storedTab) {
+            setCurrentTab(storedTab);
         }
-    }, []); // Empty dependency array means this effect runs once on mount
+        setIsClient(true);
+    }, []);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
+        if (isClient) {
             localStorage.setItem('currentTab', currentTab);
         }
-    }, [currentTab]); // This effect runs only when currentTab changes
+    }, [currentTab, isClient]);
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
     };
 
+    if (!isClient) {
+        // Optionally, render a placeholder or nothing while waiting for client-side hydration
+        return null;
+    }
 
     return (
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
