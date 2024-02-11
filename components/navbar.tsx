@@ -1,37 +1,19 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
+    // Directly setting the initial state to 'home'
     const [currentTab, setCurrentTab] = useState('home');
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        // This code runs only on the client
-        const storedTab = localStorage.getItem('currentTab');
-        if (storedTab) {
-            setCurrentTab(storedTab);
-        }
-        setIsClient(true);
-    }, []);
-
-    useEffect(() => {
-        if (isClient) {
-            localStorage.setItem('currentTab', currentTab);
-        }
-    }, [currentTab, isClient]);
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
     };
 
-    if (!isClient) {
-        // Optionally, render a placeholder or nothing while waiting for client-side hydration
-        return null;
-    }
+    // No need to use useEffect for setting localStorage as we always want to start on 'home'
 
     return (
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
