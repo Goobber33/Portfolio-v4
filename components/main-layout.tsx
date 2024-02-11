@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayout = () => {
   return (
     <div
       className="flex flex-col min-h-screen w-full bg-cover bg-center bg-fixed"
@@ -12,7 +12,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <Navbar />
       <main className="flex-grow">
-        {children}
+        
       </main>
       <Footer />
     </div>
