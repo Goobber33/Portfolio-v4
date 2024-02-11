@@ -1,22 +1,16 @@
 import React from 'react';
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import MainLayout from '@/components/main-layout';
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+type PageProps = {
+  children: React.ReactNode;
+};
+
+const Page = ({ children }: PageProps) => {
   return (
-    <div
-      className="flex flex-col min-h-screen w-full bg-cover bg-center bg-fixed"
-      style={{
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/background.webp')",
-      }}
-    >
-      <Navbar />
-      <main className="flex-grow">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <MainLayout >
+      {children}
+    </MainLayout>
   );
 };
 
-export default MainLayout;
+export default Page;
