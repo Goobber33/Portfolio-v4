@@ -6,19 +6,32 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    // Directly initialize currentTab from sessionStorage or default to 'home'
-    const [currentTab, setCurrentTab] = useState(() => {
-        return sessionStorage.getItem('currentTab') || '';
-    });
+    const [currentTab, setCurrentTab] = useState('home');
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        // This effect now only needs to update sessionStorage when currentTab changes
-        sessionStorage.setItem('currentTab', currentTab);
-    }, [currentTab]);
+        // This code runs only on the client
+        const storedTab = localStorage.getItem('currentTab');
+        if (storedTab) {
+            setCurrentTab(storedTab);
+        }
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (isClient) {
+            localStorage.setItem('currentTab', currentTab);
+        }
+    }, [currentTab, isClient]);
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
     };
+
+    if (!isClient) {
+        // Optionally, render a placeholder or nothing while waiting for client-side hydration
+        return null;
+    }
 
     return (
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
@@ -35,7 +48,6 @@ export default function Navbar() {
                 <TabsContent value="about" className="">
                     <About />
                 </TabsContent>
-                {/* Add other TabsContent as needed */}
             </Tabs>
         </div>
     );
