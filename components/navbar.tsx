@@ -1,19 +1,34 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    // Directly setting the initial state to 'home'
-    const [currentTab, setCurrentTab] = useState('home');
+    const [currentTab, setCurrentTab] = useState(() => localStorage.getItem('currentTab') || 'home');
+
+    useEffect(() => {
+        // Save to localStorage on tab change
+        localStorage.setItem('currentTab', currentTab);
+    }, [currentTab]);
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            // Set to 'home' when the user is leaving the site
+            localStorage.setItem('currentTab', 'home');
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
     };
-
-    // No need to use useEffect for setting localStorage as we always want to start on 'home'
 
     return (
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
