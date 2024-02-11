@@ -6,34 +6,14 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    // Initialize state without assuming access to localStorage
-    const [currentTab, setCurrentTab] = useState('home');
+    // Directly initialize currentTab from sessionStorage or default to 'home'
+    const [currentTab, setCurrentTab] = useState(() => {
+        return sessionStorage.getItem('currentTab') || 'home';
+    });
 
-    // Effect to run only on the client side
     useEffect(() => {
-        // Check if window is defined (i.e., running in a browser)
-        if (typeof window !== 'undefined') {
-            // Get the tab from localStorage or default to 'home'
-            const storedTab = localStorage.getItem('currentTab') || 'home';
-            setCurrentTab(storedTab);
-
-            // Listen for beforeunload event to reset to 'home' when leaving the site
-            const handleBeforeUnload = () => {
-                localStorage.setItem('currentTab', 'home');
-            };
-            window.addEventListener('beforeunload', handleBeforeUnload);
-
-            return () => {
-                window.removeEventListener('beforeunload', handleBeforeUnload);
-            };
-        }
-    }, []);
-
-    // Update local storage on tab change, ensuring it's client-side
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('currentTab', currentTab);
-        }
+        // This effect now only needs to update sessionStorage when currentTab changes
+        sessionStorage.setItem('currentTab', currentTab);
     }, [currentTab]);
 
     const handleTabChange = (newValue: string) => {
@@ -55,6 +35,7 @@ export default function Navbar() {
                 <TabsContent value="about" className="">
                     <About />
                 </TabsContent>
+                {/* Add other TabsContent as needed */}
             </Tabs>
         </div>
     );
