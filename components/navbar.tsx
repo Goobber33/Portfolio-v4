@@ -6,14 +6,22 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-    // Directly initialize currentTab from sessionStorage or default to 'home'
-    const [currentTab, setCurrentTab] = useState(() => {
-        return sessionStorage.getItem('currentTab') || 'home';
-    });
+    // Initialize state with 'home' and update if possible in useEffect
+    const [currentTab, setCurrentTab] = useState('home');
 
     useEffect(() => {
-        // This effect now only needs to update sessionStorage when currentTab changes
-        sessionStorage.setItem('currentTab', currentTab);
+        // Check if window is defined to avoid errors during SSR
+        const lastTab = typeof window !== 'undefined' ? sessionStorage.getItem('currentTab') : null;
+        if (lastTab) {
+            setCurrentTab(lastTab);
+        }
+    }, []);
+
+    useEffect(() => {
+        // Again, check if window is defined to safely use sessionStorage
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('currentTab', currentTab);
+        }
     }, [currentTab]);
 
     const handleTabChange = (newValue: string) => {
