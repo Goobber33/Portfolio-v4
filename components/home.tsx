@@ -43,7 +43,7 @@ const HomeContent = () => {
                 <motion.h2
                     variants={childVariants}
                     style={{ fontFamily: 'Roboto, sans-serif' }}
-                    className="text-lg sm:text-3xl md:text-4xl lg:text-5xl px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:whitespace-nowrap font-bold text-white">
+                    className="text-md sm:text-3xl md:text-4xl lg:text-5xl px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:whitespace-nowrap font-bold text-white">
                     I AM A FULL STACK WEB DEVELOPER.
                 </motion.h2>
                 <motion.p
