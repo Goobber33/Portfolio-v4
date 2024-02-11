@@ -6,35 +6,47 @@ import Home from "@/components/home";
 import About from "@/components/about";
 
 export default function Navbar() {
-  // Initialize state with the value from local storage or default to 'home'
-  const [currentTab, setCurrentTab] = useState(() => localStorage.getItem('currentTab') || 'home');
+    // Initialize state with 'home' as default value
+    const [currentTab, setCurrentTab] = useState('home');
 
-  // Update local storage when the currentTab changes
-  useEffect(() => {
-    localStorage.setItem('currentTab', currentTab);
-  }, [currentTab]);
+    // Only run this effect on mount and when currentTab changes
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            // Get the stored value from local storage on initial load
+            const storedTab = localStorage.getItem('currentTab');
+            if (storedTab) {
+                setCurrentTab(storedTab);
+            }
+        }
+    }, []); // Empty dependency array means this effect runs once on mount
 
-  const handleTabChange = (newValue: string) => {
-    setCurrentTab(newValue);
-  };
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem('currentTab', currentTab);
+        }
+    }, [currentTab]); // This effect runs only when currentTab changes
 
-  return (
-    <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
-                <Tabs value={currentTab} onValueChange={handleTabChange}>
-                    <TabsList className="text-sm sm:text-md flex justify-center whitespace-nowrap">
-                        <TabsTrigger value="home" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Home</TabsTrigger>
-                        <TabsTrigger value="about" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">About</TabsTrigger>
-                        <TabsTrigger value="projects" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Projects</TabsTrigger>
-                        <TabsTrigger value="contact" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Contact</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="home" className="flex-grow flex justify-center items-center">
-                        <Home />
-                    </TabsContent>
-                    <TabsContent value="about" className="">
-                        <About />
-                    </TabsContent>
-                </Tabs>
-            </div>
+    const handleTabChange = (newValue: string) => {
+        setCurrentTab(newValue);
+    };
+
+
+    return (
+        <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
+            <Tabs value={currentTab} onValueChange={handleTabChange}>
+                <TabsList className="text-sm sm:text-md flex justify-center whitespace-nowrap">
+                    <TabsTrigger value="home" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Home</TabsTrigger>
+                    <TabsTrigger value="about" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">About</TabsTrigger>
+                    <TabsTrigger value="projects" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Projects</TabsTrigger>
+                    <TabsTrigger value="contact" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg">Contact</TabsTrigger>
+                </TabsList>
+                <TabsContent value="home" className="flex-grow flex justify-center items-center">
+                    <Home />
+                </TabsContent>
+                <TabsContent value="about" className="">
+                    <About />
+                </TabsContent>
+            </Tabs>
+        </div>
     );
 }
-
