@@ -36,8 +36,8 @@ const HomeContent = () => {
                 <motion.h1
                     variants={childVariants}
                     style={{ fontFamily: 'Roboto, sans-serif' }}
-                    className="mt-4 sm:mt-8 lg:mt-16 text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold text-white">
-                    HI<span style={{ color: '#49c5b6' }}>,</span> I&apos;M KYLE
+                    className="mt-4 sm:mt-8 lg:mt-2 text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold text-white">
+                    HI<span style={{ color: '#49c5b6' }}>,</span> I&apos;M KYLE.
                 </motion.h1>
 
                 <motion.h2
