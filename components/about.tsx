@@ -108,7 +108,7 @@ const AboutPage = () => {
         </h3>
         <div className="flex flex-wrap justify-center items-center gap-8">
           {technologies.map((tech, index) => (
-            <div key={index} className="text-white font-semibold text-lg flex flex-col items-center">
+            <div key={index} className="text-white font-semibold font-sans text-xl flex flex-col items-center">
               {tech.icon}
               <span className="mt-2">{tech.name}</span>
             </div>
@@ -116,7 +116,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className='flex flex-col lg:flex-row  gap-8 sm:gap-12 md:gap-16 lg:gap-24 p-20 lg:p-40 items-center justify-center'>
+      <div className='flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-24 p-20 lg:p-40 items-center justify-center'>
         <div className="flex flex-col">
           <p className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'>
             Aside from my internship a freelance work, I am a full time dad.

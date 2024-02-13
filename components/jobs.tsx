@@ -67,7 +67,7 @@ const Jobs = () => {
                 key={job.id}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`p-4 ${activeJob.id === job.id ? 'text-customCyan' : 'text-white'}`}
+                className={`p-4 text-lg sm:text-2xl md:text-3xl lg:text-2xl ${activeJob.id === job.id ? 'text-customCyan' : 'text-white'}`}
                 onClick={() => setActiveJob(job)}
                 style={{ margin: '0 10px' }}
               >
@@ -81,8 +81,8 @@ const Jobs = () => {
 
         <div className="mt-10 text-center font-sans">
           <h3 className="text-4xl font-bold font-sans text-white">{activeJob.title} <span className="text-customCyan">@ {activeJob.company}</span></h3>
-          <p className="text-customCyan">{activeJob.range}</p>
-          <ul className="list-disc pl-5 mt-4 text-left inline-block text-white text-lg lg:text-xl">
+          <p className="text-customCyan text-lg sm:text-2xl md:text-3xl lg:text-2xl">{activeJob.range}</p>
+          <ul className="list-disc pl-5 mt-4 text-left inline-block text-white text-lg sm:text-2xl md:text-3xl lg:text-2xl">
             {activeJob.duties.map((duty, index) => (
               <li key={index}>{duty}</li>
             ))}
