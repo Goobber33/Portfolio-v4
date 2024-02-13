@@ -10,9 +10,9 @@ const AboutPage = () => {
       title: 'Full-Stack Developer',
       range: 'January 2024 - Present',
       duties: [
-        'Develop and maintain web applications using React and Node.js.',
-        'Collaborate with designers to create user-friendly interfaces.',
-        'Implement RESTful APIs for internal and external use.',
+        'Develop and maintain Knowledge Base, a web application that helps people in need.',
+        'Collaborate with designers to create user-friendly interfaces and a dynamic database.',
+        'Transitioned code base from Java to JavaScript for more uniformity in languages.',
       ],
     },
     {
@@ -20,11 +20,10 @@ const AboutPage = () => {
       company: 'Freelance Developer',
       title: 'Full-Stack Developer',
       range: 'June 2023 - Present',
-      url: 'https://companyb.com',
       duties: [
-        'Built responsive websites using HTML, CSS, and JavaScript.',
+        'Built responsive websites using React, Node, and Express.',
         'Optimized application for maximum speed and scalability.',
-        'Participated in code reviews and team meetings.',
+        'Actively communicated with customers on project status and updates.',
       ],
     },
     {
@@ -32,11 +31,10 @@ const AboutPage = () => {
       company: 'Intermax Networks',
       title: 'MSP Field Technician',
       range: 'December 2022 - June 2023',
-      url: 'https://companyb.com',
       duties: [
-        'Built responsive websites using HTML, CSS, and JavaScript.',
-        'Optimized application for maximum speed and scalability.',
-        'Participated in code reviews and team meetings.',
+        'Provided remote and on-site IT support',
+        'Managed Office 265 and Azure AD, and oversaw security and performance',
+        'Worked for over 100+ businesses on the Managed Sevice Providers team.',
       ],
     },
     {
@@ -44,11 +42,10 @@ const AboutPage = () => {
       company: 'Northern Quest Resort & Casino',
       title: 'IT Support Technician',
       range: 'August 2021 - October 2022',
-      url: 'https://companyb.com',
       duties: [
-        'Built responsive websites using HTML, CSS, and JavaScript.',
-        'Optimized application for maximum speed and scalability.',
-        'Participated in code reviews and team meetings.',
+        'Mentored junior IT team members, ensured efficient client-support ticket reosultions.',
+        'IT Networking and Project Management.',
+        'Maintained Active Directory permissions and group policies and oversee data integrity in SQL Databses.',
       ],
     },
   ];
@@ -139,9 +136,9 @@ const AboutPage = () => {
         </motion.div>
       </motion.div>
 
-       {/* Jobs Section */}
+      {/* Jobs Section */}
 
-       <section id="jobs" className="mt-20">
+      <section id="jobs" className="mt-20">
         <h2 className="text-5xl font-bold text-center text-customCyan">Where I&apos;ve Worked</h2>
 
         <div className="flex justify-center mt-5">
