@@ -18,6 +18,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Oswald', 'Optima',],
+        serif: ['ui-serif', 'Georgia',],
+      },
       colors: {
         customCyan: '#49c5b6',
         border: "hsl(var(--border))",
