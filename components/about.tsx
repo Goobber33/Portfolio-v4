@@ -8,8 +8,7 @@ const AboutPage = () => {
       id: 1,
       company: 'Keelworks Foundation',
       title: 'Full-Stack Developer',
-      range: 'January 2020 - Present',
-      url: 'https://companya.com',
+      range: 'January 2024 - Present',
       duties: [
         'Develop and maintain web applications using React and Node.js.',
         'Collaborate with designers to create user-friendly interfaces.',
@@ -19,8 +18,8 @@ const AboutPage = () => {
     {
       id: 2,
       company: 'Freelance Developer',
-      title: 'Front-End Developer',
-      range: 'June 2018 - December 2019',
+      title: 'Full-Stack Developer',
+      range: 'June 2023 - Present',
       url: 'https://companyb.com',
       duties: [
         'Built responsive websites using HTML, CSS, and JavaScript.',
@@ -30,9 +29,9 @@ const AboutPage = () => {
     },
     {
       id: 3,
-      company: 'Freelance Developer',
-      title: 'Front-End Developer',
-      range: 'June 2018 - December 2019',
+      company: 'Intermax Networks',
+      title: 'MSP Field Technician',
+      range: 'December 2022 - June 2023',
       url: 'https://companyb.com',
       duties: [
         'Built responsive websites using HTML, CSS, and JavaScript.',
@@ -42,9 +41,9 @@ const AboutPage = () => {
     },
     {
       id: 4,
-      company: 'Freelance Developer',
-      title: 'Front-End Developer',
-      range: 'June 2018 - December 2019',
+      company: 'Northern Quest Resort & Casino',
+      title: 'IT Support Technician',
+      range: 'August 2021 - October 2022',
       url: 'https://companyb.com',
       duties: [
         'Built responsive websites using HTML, CSS, and JavaScript.',
