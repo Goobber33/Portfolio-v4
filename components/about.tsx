@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import Jobs from './jobs';
-import { FaReact, FaNodeJs, FaCss3Alt } from 'react-icons/fa'; // Common icons
+import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiJavascript, SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb } from 'react-icons/si';
 
 const technologies = [
@@ -115,6 +115,18 @@ const AboutPage = () => {
           ))}
         </div>
       </div>
+
+      <div className='flex flex-col lg:flex-row  gap-8 sm:gap-12 md:gap-16 lg:gap-24 p-20 lg:p-40 items-center justify-center'>
+        <div className="flex flex-col">
+          <p className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'>
+            Aside from my internship a freelance work, I am a full time dad.
+          </p>
+          <p className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto mt-8 lg:leading-relaxed font-sans'>
+            In my free time I enjoy playing video games, snowboarding, and spending time with my family.
+          </p>
+        </div>
+      </div>
+
     </>
   );
 };
