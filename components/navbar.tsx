@@ -48,10 +48,10 @@ export default function Navbar() {
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
             <Tabs value={currentTab} onValueChange={handleTabChange}>
                 <TabsList className="text-sm sm:text-md flex justify-center whitespace-nowrap" style={tabListStyle}>
-                    <TabsTrigger value="home" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold">Home</TabsTrigger>
-                    <TabsTrigger value="about" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold">About</TabsTrigger>
-                    <TabsTrigger value="projects" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold">Projects</TabsTrigger>
-                    <TabsTrigger value="contact" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold">Contact</TabsTrigger>
+                    <TabsTrigger value="home" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold font-sans">HOME</TabsTrigger>
+                    <TabsTrigger value="about" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold font-sans">ABOUT</TabsTrigger>
+                    <TabsTrigger value="projects" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold font-sans">PROJECTS</TabsTrigger>
+                    <TabsTrigger value="contact" className="m-1 px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-bold font-sans">CONTACT</TabsTrigger>
                 </TabsList>
                 <TabsContent value="home" className="flex-grow flex justify-center items-center">
                     <Home />
