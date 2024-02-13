@@ -1,56 +1,20 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React from 'react';
+import Jobs from './jobs';
+import { FaReact, FaNodeJs, FaCss3Alt } from 'react-icons/fa'; // Common icons
+import { SiJavascript, SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb } from 'react-icons/si';
+
+const technologies = [
+  { name: "React", icon: <FaReact size="30" color="#61DAFB" /> },
+  { name: "JavaScript", icon: <SiJavascript size="30" color="#F7DF1E" /> },
+  { name: "Node.js", icon: <FaNodeJs size="30" color="#339933" /> },
+  { name: "Next.js", icon: <SiNextdotjs size="30" color="#ffffff" /> },
+  { name: "TypeScript", icon: <SiTypescript size="30" color="#3178C6" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size="30" color="#06B6D4" /> },
+  { name: "MongoDB", icon: <SiMongodb size="30" color="#47A248" /> },
+];
 
 const AboutPage = () => {
-
-  const jobsData = [
-    {
-      id: 1,
-      company: 'Keelworks Foundation',
-      title: 'Full-Stack Developer',
-      range: 'January 2024 - Present',
-      duties: [
-        'Develop and maintain Knowledge Base, a web application that helps people in need.',
-        'Collaborate with designers to create user-friendly interfaces and a dynamic database.',
-        'Transitioned code base from Java to JavaScript for more uniformity in languages.',
-      ],
-    },
-    {
-      id: 2,
-      company: 'Freelance Developer',
-      title: 'Full-Stack Developer',
-      range: 'June 2023 - Present',
-      duties: [
-        'Built responsive websites using React, Node, and Express.',
-        'Optimized application for maximum speed and scalability.',
-        'Actively communicated with customers on project status and updates.',
-      ],
-    },
-    {
-      id: 3,
-      company: 'Intermax Networks',
-      title: 'MSP Field Technician',
-      range: 'December 2022 - June 2023',
-      duties: [
-        'Provided remote and on-site IT support',
-        'Managed Office 265 and Azure AD, and oversaw security and performance',
-        'Worked for over 100+ businesses on the Managed Sevice Providers team.',
-      ],
-    },
-    {
-      id: 4,
-      company: 'Northern Quest Resort & Casino',
-      title: 'IT Support Technician',
-      range: 'August 2021 - October 2022',
-      duties: [
-        'Mentored junior IT team members, ensured efficient client-support ticket reosultions.',
-        'IT Networking and Project Management.',
-        'Maintained Active Directory permissions and group policies and oversee data integrity in SQL Databses.',
-      ],
-    },
-  ];
-
-  const [activeJob, setActiveJob] = useState(jobsData[0]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -118,58 +82,39 @@ const AboutPage = () => {
           variants={textContainerVariants}
           className="flex flex-col"
         >
-          <motion.h4 variants={childVariants} className='text-md sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 text-customCyan'>
+          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 text-customCyan'>
             I&apos;m a Full-Stack Web Developer<span style={{ color: 'white' }}>.</span>
           </motion.h4>
           <motion.p
             variants={childVariants}
-            className='text-white font-100 text-md sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'
+            className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'
           >
             I have a passion for creating beautiful and functional web applications. I love every step of the creative process<span style={{ color: '#49c5b6' }}>,</span> from concept to deployment.
           </motion.p>
           <motion.p
             variants={childVariants}
-            className='text-white font-100 text-md sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto mt-8 lg:leading-relaxed font-sans'
+            className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto mt-8 lg:leading-relaxed font-sans'
           >
             I was born and raised in San Diego, California and currently I live in Coeur d&apos;Alene, Idaho. I started my developer career by attending and graduating from the University of Washington&apos;s Full-Stack Web Development Bootcamp.
           </motion.p>
         </motion.div>
       </motion.div>
 
-      {/* Jobs Section */}
+      <Jobs />
 
-      <section id="jobs" className="mt-20">
-        <h2 className="text-5xl font-bold font-sans text-center text-customCyan">Where I&apos;ve Worked</h2>
-
-        <div className="flex justify-center mt-5 font-sans text-xl">
-          <div className="flex overflow-x-auto">
-            {jobsData.map((job, index) => (
-              <motion.button
-                key={job.id}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className={`p-4 ${activeJob.id === job.id ? 'text-customCyan' : 'text-white'}`}
-                onClick={() => setActiveJob(job)}
-                style={{ margin: '0 10px' }}
-              >
-                {job.company}
-              </motion.button>
-            ))}
-          </div>
+      <div className="mt-32 text-center">
+        <h3 className="text-4xl font-bold text-customCyan mb-8">
+          Technologies I Use
+        </h3>
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          {technologies.map((tech, index) => (
+            <div key={index} className="text-white font-semibold text-lg flex flex-col items-center">
+              {tech.icon}
+              <span className="mt-2">{tech.name}</span>
+            </div>
+          ))}
         </div>
-
-        {/* Active job description */}
-
-        <div className="mt-10 text-center font-sans">
-          <h3 className="text-4xl font-bold font-sans text-white">{activeJob.title} <span className="text-customCyan">@ {activeJob.company}</span></h3>
-          <p className="text-customCyan">{activeJob.range}</p>
-          <ul className="list-disc pl-5 mt-4 text-left inline-block text-white text-lg lg:text-xl">
-            {activeJob.duties.map((duty, index) => (
-              <li key={index}>{duty}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      </div>
     </>
   );
 };
