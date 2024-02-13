@@ -6,7 +6,7 @@ const AboutPage = () => {
   const jobsData = [
     {
       id: 1,
-      company: 'Company A',
+      company: 'Keelworks Foundation',
       title: 'Full-Stack Developer',
       range: 'January 2020 - Present',
       url: 'https://companya.com',
@@ -18,7 +18,31 @@ const AboutPage = () => {
     },
     {
       id: 2,
-      company: 'Company B',
+      company: 'Freelance Developer',
+      title: 'Front-End Developer',
+      range: 'June 2018 - December 2019',
+      url: 'https://companyb.com',
+      duties: [
+        'Built responsive websites using HTML, CSS, and JavaScript.',
+        'Optimized application for maximum speed and scalability.',
+        'Participated in code reviews and team meetings.',
+      ],
+    },
+    {
+      id: 3,
+      company: 'Freelance Developer',
+      title: 'Front-End Developer',
+      range: 'June 2018 - December 2019',
+      url: 'https://companyb.com',
+      duties: [
+        'Built responsive websites using HTML, CSS, and JavaScript.',
+        'Optimized application for maximum speed and scalability.',
+        'Participated in code reviews and team meetings.',
+      ],
+    },
+    {
+      id: 4,
+      company: 'Freelance Developer',
       title: 'Front-End Developer',
       range: 'June 2018 - December 2019',
       url: 'https://companyb.com',
@@ -130,7 +154,7 @@ const AboutPage = () => {
                 whileTap={{ scale: 0.9 }}
                 className={`p-4 ${activeJob.id === job.id ? 'text-customCyan' : 'text-white'}`}
                 onClick={() => setActiveJob(job)}
-                style={{ margin: '0 10px' }} // Add spacing between tabs
+                style={{ margin: '0 10px' }}
               >
                 {job.company}
               </motion.button>
@@ -139,6 +163,7 @@ const AboutPage = () => {
         </div>
 
         {/* Active job description */}
+
         <div className="mt-10 text-center">
           <h3 className="text-2xl font-bold text-white">{activeJob.title} <span className="text-customCyan">@ {activeJob.company}</span></h3>
           <p className="text-customCyan">{activeJob.range}</p>
