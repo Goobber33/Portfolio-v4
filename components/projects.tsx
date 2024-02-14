@@ -112,6 +112,7 @@ const ProjectsPage = () => {
             >
                 {initialProjects.map((project, index) => (
                     <motion.div key={index} variants={childVariants} className="mx-auto">
+                             <a href={project.url} target="_blank" rel="noopener noreferrer">
                         <motion.div variants={cardVariants} whileHover="hover">
                             <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-[21rem] flex flex-col justify-between">
                                 <div className="p-4 flex justify-between items-start">
@@ -141,6 +142,7 @@ const ProjectsPage = () => {
                                 </CardFooter>
                             </Card>
                         </motion.div>
+                        </a>
                     </motion.div>
                 ))}
 
