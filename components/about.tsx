@@ -82,7 +82,7 @@ const AboutPage = () => {
           variants={textContainerVariants}
           className="flex flex-col"
         >
-          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 mt-6 lg:mt-0 text-customCyan w-76 text-center lg:w-full'>
+          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 mt-6 lg:mt-0 text-customCyan w-76 text-center w-96 sm:w-80 lg:w-full'>
             I&apos;m a Full-Stack Web Developer<span style={{ color: 'white' }}>.</span>
           </motion.h4>
           <motion.p
