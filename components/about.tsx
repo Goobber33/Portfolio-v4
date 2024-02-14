@@ -53,7 +53,7 @@ const AboutPage = () => {
         variants={childVariants}
         initial="hidden"
         animate="visible"
-        className="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-serif font-bold text-white text-center mt-28 w-full leading-2"
+        className="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-serif font-bold text-white text-center mt-36 lg:mt-28 w-full leading-2"
       >
         My Portfolio
       </motion.h3>
@@ -82,12 +82,12 @@ const AboutPage = () => {
           variants={textContainerVariants}
           className="flex flex-col"
         >
-          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 text-customCyan'>
+          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 mt-6 lg:mt-0 text-customCyan w-76 text-center lg:w-full'>
             I&apos;m a Full-Stack Web Developer<span style={{ color: 'white' }}>.</span>
           </motion.h4>
           <motion.p
             variants={childVariants}
-            className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'
+            className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans w-96 lg:w-full'
           >
             I have a passion for creating beautiful and functional web applications. I love every step of the creative process<span style={{ color: '#49c5b6' }}>,</span> from concept to deployment.
           </motion.p>
@@ -103,7 +103,7 @@ const AboutPage = () => {
       <Jobs />
 
       <div className="mt-32 text-center">
-        <h3 className="text-4xl font-bold text-customCyan mb-8">
+        <h3 className="text-4xl font-bold font-sans text-customCyan mb-8">
           Technologies I Use
         </h3>
         <div className="flex flex-wrap justify-center items-center gap-8">

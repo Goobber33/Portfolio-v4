@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Home from "@/components/home";
 import About from "@/components/about";
+import Projects from "@/components/projects";
 
 export default function Navbar() {
     const [currentTab, setCurrentTab] = useState('home');
@@ -56,8 +57,11 @@ export default function Navbar() {
                 <TabsContent value="home" className="flex-grow flex justify-center items-center">
                     <Home />
                 </TabsContent>
-                <TabsContent value="about" className="">
+                <TabsContent value="about">
                     <About />
+                </TabsContent>
+                <TabsContent value="projects">
+                    <Projects />
                 </TabsContent>
             </Tabs>
         </div>
