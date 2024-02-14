@@ -55,7 +55,7 @@ const AboutPage = () => {
         animate="visible"
         className="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-serif font-bold text-white text-center mt-36 lg:mt-28 w-full leading-2"
       >
-        My Portfolio
+        I&apos;M KYLE
       </motion.h3>
 
       <motion.div
@@ -75,7 +75,6 @@ const AboutPage = () => {
             className="absolute bottom-0 left-0 right-0 bg-white text-center p-2 leading-loose text-2xl font-bold font-serif"
             variants={childVariants}
           >
-            <span style={{ color: '#49c5b6' }}>Kyle Parks</span>
           </motion.div>
         </div>
         <motion.div
