@@ -113,7 +113,7 @@ const ProjectsPage = () => {
                 {initialProjects.map((project, index) => (
                     <motion.div key={index} variants={childVariants} className="mx-auto">
                         <motion.div variants={cardVariants} whileHover="hover">
-                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-96 flex flex-col justify-between">
+                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-[21rem] flex flex-col justify-between">
                                 <div className="p-4 flex justify-between items-start">
                                     <div>
                                         <FiFolder size="2.5em" className="text-customCyan mb-2" />
