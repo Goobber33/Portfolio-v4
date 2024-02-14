@@ -37,6 +37,7 @@ export default function Navbar() {
 
     const handleTabChange = (newValue: string) => {
         setCurrentTab(newValue);
+        window.scrollTo(0, 0);
     };
 
     if (!isClient) {
