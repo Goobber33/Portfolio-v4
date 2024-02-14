@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FiFolder } from 'react-icons/fi';
+import { FiFolder, FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const initialProjects = [
     {
         title: 'Portfolio-v4',
         description: 'The fourth version of my Portfolio Website.',
         additionalInfo: 'React | Next.js | Tailwind.css',
-        url: "https://portfolio-v4-beta-steel.vercel.app/"
+        url: "https://portfolio-v4-beta-steel.vercel.app/",
+        github: 'https://github.com/Goobber33/Portfolio-v4'
     },
     {
         title: 'Quantum IQ',
         description: 'Quantum IQ is a state-of-the-art SaaS AI platform designed to streamline and enhance a variety of AI functionalities.',
         additionalInfo: 'React | Next.js | Tailwind.css | Prism | Stripe',
-        url: 'https://quantum-ai-kappa.vercel.app/'
+        url: 'https://quantum-ai-kappa.vercel.app/',
+        github: 'https://github.com/Goobber33/Portfolio-v4'
     },
     {
         title: 'Knowledge Base Back End',
@@ -106,32 +108,39 @@ const ProjectsPage = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mb-12 mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-1 md:cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:gap-4 gap-4 lg:gap-4 p-4 mb-12 mx-auto"
             >
                 {initialProjects.map((project, index) => (
                     <motion.div key={index} variants={childVariants} className="mx-auto">
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
-                            <motion.div variants={cardVariants} whileHover="hover">
-                                <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-96 max-w-sm mx-auto flex flex-col justify-between">
+                        <motion.div variants={cardVariants} whileHover="hover">
+                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-96 flex flex-col justify-between">
+                                <div className="p-4 flex justify-between items-start">
                                     <div>
-                                        <CardHeader className="p-4">
-                                            <FiFolder size="2.5em" className="text-customCyan mb-2" />
-                                            <CardTitle className="pt-4 text-4xl font-bold group-hover:text-customCyan font-serif">
-                                                {project.title}
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="p-4 font-sans flex-grow">
-                                            <CardDescription className="text-lg">{project.description}</CardDescription>
-                                            <p className="mt-2">{project.details}</p>
-                                        </CardContent>
+                                        <FiFolder size="2.5em" className="text-customCyan mb-2" />
+                                        <CardTitle className="pt-4 text-4xl font-bold group-hover:text-customCyan font-serif">
+                                            {project.title}
+                                        </CardTitle>
                                     </div>
-                                    <CardFooter className=" p-2 pb-2 -mt-4 font-sans">
-                                        <p>{project.additionalInfo}</p>
-                                    </CardFooter>
-                                </Card>
-
-                            </motion.div>
-                        </a>
+                                    <div className="flex items-center space-x-2">
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                <FiGithub size="1.5em" className="text-white hover:text-customCyan" />
+                                            </a>
+                                        )}
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                            <FiExternalLink size="1.5em" className="text-white hover:text-customCyan" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <CardContent className="p-4 font-sans flex-grow">
+                                    <CardDescription className="text-lg">{project.description}</CardDescription>
+                                    <p className="mt-2">{project.details}</p>
+                                </CardContent>
+                                <CardFooter className="p-4 font-sans">
+                                    <p>{project.additionalInfo}</p>
+                                </CardFooter>
+                            </Card>
+                        </motion.div>
                     </motion.div>
                 ))}
 
