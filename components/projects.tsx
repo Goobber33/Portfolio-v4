@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FiFolder } from 'react-icons/fi';
 
 const initialProjects = [
     {
         title: 'Portfolio-v4',
-        description: 'Description for Project 1',
-        details: 'More details about Project 1.',
-        additionalInfo: 'Additional Info for Project 1',
+        description: 'The fourth version of my Portfolio Website.',
+        additionalInfo: 'React Next.js Tailwind.css',
+        url: "https://portfolio-v4-beta-steel.vercel.app/"
     },
     {
         title: 'Project 2',
@@ -65,7 +66,7 @@ const additionalProjects = [
 
 const ProjectsPage = () => {
     const [showMore, setShowMore] = useState(false);
-   
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -107,39 +108,45 @@ const ProjectsPage = () => {
             >
                 {initialProjects.map((project, index) => (
                     <motion.div key={index} variants={childVariants}>
+                          <a href={project.url} target="_blank" rel="noopener noreferrer">
                         <motion.div variants={cardVariants} whileHover="hover">
-                            <Card className="bg-white shadow-lg overflow-hidden group cursor-pointer">
-                                <CardHeader className="p-4">
-                                    <CardTitle className="text-xl font-bold group-hover:text-customCyan">
-                                        {project.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-4">
-                                    <CardDescription className="text-lg">{project.description}</CardDescription>
-                                    <p className="mt-2">{project.details}</p>
-                                </CardContent>
-                                <CardFooter className="p-4">
+                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-72 w-96 flex flex-col justify-between">
+                                <div>
+                                    <CardHeader className="p-4">
+                                        <FiFolder size="2.5em" className="text-customCyan mb-2" />
+                                        <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
+                                            {project.title}
+                                        </CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="p-4 font-sans flex-grow">
+                                        <CardDescription className="text-lg">{project.description}</CardDescription>
+                                        <p className="mt-2">{project.details}</p>
+                                    </CardContent>
+                                </div>
+                                <CardFooter className="p-4 font-sans">
                                     <p>{project.additionalInfo}</p>
                                 </CardFooter>
                             </Card>
+
                         </motion.div>
+                        </a>
                     </motion.div>
-                    ))}
-                    
+                ))}
+
                 {showMore && additionalProjects.map((project, index) => (
                     <motion.div key={`additional-${index}`} variants={childVariants}>
                         <motion.div variants={cardVariants} whileHover="hover">
-                        <Card className="bg-white shadow-lg overflow-hidden group cursor-pointer">
+                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer">
                                 <CardHeader className="p-4">
-                                    <CardTitle className="text-xl font-bold group-hover:text-customCyan">
+                                    <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
                                         {project.title}
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="p-4">
+                                <CardContent className="p-4 font-sans">
                                     <CardDescription className="text-lg">{project.description}</CardDescription>
                                     <p className="mt-2">{project.details}</p>
                                 </CardContent>
-                                <CardFooter className="p-4">
+                                <CardFooter className="p-4 font-sans">
                                     <p>{project.additionalInfo}</p>
                                 </CardFooter>
                             </Card>
@@ -150,7 +157,7 @@ const ProjectsPage = () => {
 
             <div className="flex justify-center">
                 <Button
-                    className="text-white border-2 border-customCyan bg-black hover:bg-customCyan px-4 py-2 rounded shadow"
+                    className="text-white border-2 border-customCyan bg-black hover:bg-customCyan px-4 py-2 rounded shadow font-serif font-black text-xl"
                     onClick={() => setShowMore(!showMore)}
                 >
                     {showMore ? "Show Less" : "Show More"}
