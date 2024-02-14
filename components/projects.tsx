@@ -52,7 +52,8 @@ const additionalProjects = [
         description: 'Description for Project 2',
         details: 'More details about Project 2.',
         additionalInfo: 'Additional Info for Project 2',
-        url: "https://portfolio-v4-beta-steel.vercel.app/"
+        url: "https://portfolio-v4-beta-steel.vercel.app/",
+        github: 'https://github.com/Goobber33/Portfolio-v4'
     },
     {
         title: 'Project 2',
@@ -149,25 +150,35 @@ const ProjectsPage = () => {
                 {showMore && additionalProjects.map((project, index) => (
                     <motion.div key={`additional-${index}`} variants={childVariants}>
                         <a href={project.url} target="_blank" rel="noopener noreferrer">
-                            <motion.div variants={cardVariants} whileHover="hover">
-                                <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-72 w-96 flex flex-col justify-between">
+                        <motion.div variants={cardVariants} whileHover="hover">
+                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-[21rem] flex flex-col justify-between">
+                                <div className="p-4 flex justify-between items-start">
                                     <div>
-                                        <CardHeader className="p-4">
-                                            <FiFolder size="2.5em" className="text-customCyan mb-2" />
-                                            <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
-                                                {project.title}
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="p-4 font-sans flex-grow">
-                                            <CardDescription className="text-lg">{project.description}</CardDescription>
-                                            <p className="mt-2">{project.details}</p>
-                                        </CardContent>
+                                        <FiFolder size="2.5em" className="text-customCyan mb-2" />
+                                        <CardTitle className="pt-4 text-4xl font-bold group-hover:text-customCyan font-serif">
+                                            {project.title}
+                                        </CardTitle>
                                     </div>
-                                    <CardFooter className="p-4 font-sans">
-                                        <p>{project.additionalInfo}</p>
-                                    </CardFooter>
-                                </Card>
-                            </motion.div>
+                                    <div className="flex items-center space-x-2">
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                <FiGithub size="1.5em" className="text-white hover:text-customCyan" />
+                                            </a>
+                                        )}
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                            <FiExternalLink size="1.5em" className="text-white hover:text-customCyan" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <CardContent className="p-4 font-sans flex-grow">
+                                    <CardDescription className="text-lg">{project.description}</CardDescription>
+                                    <p className="mt-2">{project.details}</p>
+                                </CardContent>
+                                <CardFooter className="p-4 font-sans">
+                                    <p>{project.additionalInfo}</p>
+                                </CardFooter>
+                            </Card>
+                        </motion.div>
                         </a>
                     </motion.div>
                 ))}

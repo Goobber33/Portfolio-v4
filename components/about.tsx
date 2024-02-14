@@ -88,7 +88,7 @@ const AboutPage = () => {
             variants={childVariants}
             className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans w-96 lg:w-full'
           >
-            I have a passion for creating beautiful and functional web applications. I love every step of the creative process<span style={{ color: '#49c5b6' }}>,</span> from concept to deployment.
+            I have a passion for creating beautiful and functional web applications. I love every step of the creative process, from concept to deployment.
           </motion.p>
           <motion.p
             variants={childVariants}
