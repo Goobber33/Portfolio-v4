@@ -49,14 +49,14 @@ const AboutPage = () => {
 
   return (
     <>
-      <motion.h3
+      <motion.h1
         variants={childVariants}
         initial="hidden"
         animate="visible"
         className="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-serif font-bold text-white text-center mt-36 lg:mt-28 w-full leading-2"
       >
         I&apos;M KYLE
-      </motion.h3>
+      </motion.h1>
 
       <motion.div
         variants={containerVariants}
@@ -81,9 +81,9 @@ const AboutPage = () => {
           variants={textContainerVariants}
           className="flex flex-col"
         >
-          <motion.h4 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 mt-6 lg:mt-0 text-customCyan w-76 text-center w-96 sm:w-80 lg:w-full'>
+          <motion.h2 variants={childVariants} className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-sans mb-8 mt-6 lg:mt-0 text-customCyan w-76 text-center w-96 sm:w-80 lg:w-full'>
             I&apos;m a Full-Stack Web Developer<span style={{ color: 'white' }}>.</span>
-          </motion.h4>
+          </motion.h2>
           <motion.p
             variants={childVariants}
             className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans w-96 lg:w-full'
