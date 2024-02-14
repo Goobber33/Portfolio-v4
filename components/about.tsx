@@ -118,7 +118,7 @@ const AboutPage = () => {
       <div className='flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-24 p-20 lg:p-40 items-center justify-center'>
         <div className="flex flex-col">
           <p className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto lg:leading-relaxed font-sans'>
-            Aside from my internship a freelance work, I am a full time dad.
+            Aside from my internship and freelance work, I am a full-time dad.
           </p>
           <p className='text-white font-100 text-lg sm:text-2xl md:text-3xl lg:text-2xl text-start lg:max-w-xl w-auto mt-8 lg:leading-relaxed font-sans'>
             In my free time I enjoy playing video games, snowboarding, and spending time with my family.
