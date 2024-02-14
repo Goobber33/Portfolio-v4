@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"
 
-// Define your projects here with unique content for each
 const projects = [
     {
         title: 'Portfolio-v4',
@@ -68,13 +68,13 @@ const ProjectsPage = () => {
                 Projects
             </motion.h1>
             <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mb-36"
                 variants={containerVariants}
                 initial="initial"
                 whileInView="visible"
                 viewport={{ once: true }}
             >
-               {projects.map((project, index) => (
+                {projects.map((project, index) => (
                     <motion.div key={index} variants={cardVariants} whileHover="hover">
                         <Card className="group bg-white shadow-lg overflow-hidden hover:cursor-pointer">
                             <CardHeader className="p-4">
@@ -93,6 +93,11 @@ const ProjectsPage = () => {
                     </motion.div>
                 ))}
             </motion.div>
+            <div className="flex justify-center -mt-28">
+                <Button className="text-white border-2 border-customCyan bg-black hover:bg-customCyan px-4 py-2 rounded shadow">
+                    Show More
+                </Button>
+            </div>
         </div>
     );
 };
