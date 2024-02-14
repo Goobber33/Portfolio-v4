@@ -43,7 +43,7 @@ export default function Navbar() {
         return null;
     }
 
-    const tabListStyle = showBackground ? { backgroundColor: 'rgba(0, 0, 0, 0.8)' } : {};
+    const tabListStyle = showBackground ? { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '100' } : {};
 
     return (
         <div className="md:flex flex-col justify-center items-center px-4 py-8 sm:p-12 w-full">
