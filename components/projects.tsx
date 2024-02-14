@@ -65,18 +65,7 @@ const additionalProjects = [
 
 const ProjectsPage = () => {
     const [showMore, setShowMore] = useState(false);
-    const displayedProjects = showMore ? [...initialProjects, ...additionalProjects] : initialProjects;
-
-    const getContainerVariants = () => ({
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: showMore ? 0.05 : 0.1, // Faster stagger for additional projects
-            },
-        },
-    });
-
+   
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -167,7 +156,7 @@ const ProjectsPage = () => {
                     {showMore ? "Show Less" : "Show More"}
                 </Button>
             </div>
-            
+
         </div>
     );
 };
