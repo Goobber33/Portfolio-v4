@@ -8,26 +8,27 @@ const initialProjects = [
     {
         title: 'Portfolio-v4',
         description: 'The fourth version of my Portfolio Website.',
-        additionalInfo: 'React Next.js Tailwind.css',
+        additionalInfo: 'React | Next.js | Tailwind.css',
         url: "https://portfolio-v4-beta-steel.vercel.app/"
     },
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        title: 'Quantum IQ',
+        description: 'Quantum IQ is a state-of-the-art SaaS AI platform designed to streamline and enhance a variety of AI functionalities.',
+        additionalInfo: 'React | Next.js | Tailwind.css | Prism | Stripe',
+        url: 'https://quantum-ai-kappa.vercel.app/'
     },
     {
-        title: 'Project 2',
+        title: 'Knowledge Base Back End',
         description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        additionalInfo: 'JavaScript | Node.js | Express | MongoDB',
+        url: 'https://github.com/Goobber33/Knowledge-Base-Back-End'
     },
     {
-        title: 'Project 2',
+        title: 'Jobstacle Course',
         description: 'Description for Project 2',
         details: 'More details about Project 2.',
         additionalInfo: 'Additional Info for Project 2',
+        url: 'https://github.com/chewytaro/Jobstacle-course?tab=readme-ov-file'
     },
     {
         title: 'Project 2',
@@ -49,6 +50,7 @@ const additionalProjects = [
         description: 'Description for Project 2',
         details: 'More details about Project 2.',
         additionalInfo: 'Additional Info for Project 2',
+        url: "https://portfolio-v4-beta-steel.vercel.app/"
     },
     {
         title: 'Project 2',
@@ -104,53 +106,58 @@ const ProjectsPage = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mb-12"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mb-12 mx-auto"
             >
                 {initialProjects.map((project, index) => (
-                    <motion.div key={index} variants={childVariants}>
-                          <a href={project.url} target="_blank" rel="noopener noreferrer">
-                        <motion.div variants={cardVariants} whileHover="hover">
-                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-72 w-96 flex flex-col justify-between">
-                                <div>
-                                    <CardHeader className="p-4">
-                                        <FiFolder size="2.5em" className="text-customCyan mb-2" />
-                                        <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
-                                            {project.title}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="p-4 font-sans flex-grow">
-                                        <CardDescription className="text-lg">{project.description}</CardDescription>
-                                        <p className="mt-2">{project.details}</p>
-                                    </CardContent>
-                                </div>
-                                <CardFooter className="p-4 font-sans">
-                                    <p>{project.additionalInfo}</p>
-                                </CardFooter>
-                            </Card>
+                    <motion.div key={index} variants={childVariants} className="mx-auto">
+                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                            <motion.div variants={cardVariants} whileHover="hover">
+                                <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-96 w-96 max-w-sm mx-auto flex flex-col justify-between">
+                                    <div>
+                                        <CardHeader className="p-4">
+                                            <FiFolder size="2.5em" className="text-customCyan mb-2" />
+                                            <CardTitle className="pt-4 text-4xl font-bold group-hover:text-customCyan font-serif">
+                                                {project.title}
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="p-4 font-sans flex-grow">
+                                            <CardDescription className="text-lg">{project.description}</CardDescription>
+                                            <p className="mt-2">{project.details}</p>
+                                        </CardContent>
+                                    </div>
+                                    <CardFooter className=" p-2 pb-2 -mt-4 font-sans">
+                                        <p>{project.additionalInfo}</p>
+                                    </CardFooter>
+                                </Card>
 
-                        </motion.div>
+                            </motion.div>
                         </a>
                     </motion.div>
                 ))}
 
                 {showMore && additionalProjects.map((project, index) => (
                     <motion.div key={`additional-${index}`} variants={childVariants}>
-                        <motion.div variants={cardVariants} whileHover="hover">
-                            <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer">
-                                <CardHeader className="p-4">
-                                    <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
-                                        {project.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-4 font-sans">
-                                    <CardDescription className="text-lg">{project.description}</CardDescription>
-                                    <p className="mt-2">{project.details}</p>
-                                </CardContent>
-                                <CardFooter className="p-4 font-sans">
-                                    <p>{project.additionalInfo}</p>
-                                </CardFooter>
-                            </Card>
-                        </motion.div>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                            <motion.div variants={cardVariants} whileHover="hover">
+                                <Card className="bg-gray-900 text-white border-none overflow-hidden group cursor-pointer h-72 w-96 flex flex-col justify-between">
+                                    <div>
+                                        <CardHeader className="p-4">
+                                            <FiFolder size="2.5em" className="text-customCyan mb-2" />
+                                            <CardTitle className="text-4xl font-bold group-hover:text-customCyan font-serif">
+                                                {project.title}
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="p-4 font-sans flex-grow">
+                                            <CardDescription className="text-lg">{project.description}</CardDescription>
+                                            <p className="mt-2">{project.details}</p>
+                                        </CardContent>
+                                    </div>
+                                    <CardFooter className="p-4 font-sans">
+                                        <p>{project.additionalInfo}</p>
+                                    </CardFooter>
+                                </Card>
+                            </motion.div>
+                        </a>
                     </motion.div>
                 ))}
             </motion.div>
