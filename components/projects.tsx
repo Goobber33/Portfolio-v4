@@ -21,28 +21,29 @@ const initialProjects = [
     },
     {
         title: 'Knowledge Base Back End',
-        description: 'Description for Project 2',
+        description: 'Back-End code for Knowledge Base, a web application that helps people in need.',
         additionalInfo: 'JavaScript | Node.js | Express | MongoDB',
         url: 'https://github.com/Goobber33/Knowledge-Base-Back-End'
     },
     {
         title: 'Jobstacle Course',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        description: 'Jobstacle course is a website where you can track the jobs you have applied to, and interviewed for.',
+        additionalInfo: 'JavaScript | Handlebars',
         url: 'https://github.com/chewytaro/Jobstacle-course?tab=readme-ov-file'
     },
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        title: 'The Shed',
+        description: 'This project is a web application for The Shed, a local gym in Sandpoint, Idaho owned by Jen Barden.',
+        additionalInfo: 'React | Bootstrap | JavaScript',
+        url:'https://goobber33.github.io/The-Shed/',
+        github:'https://github.com/Goobber33/The-Shed'
     },
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        title: 'Jeff-Barden Portfolio',
+        description: 'This portfolio website is built for Jeff Barden, a renowned carpenter based in Bayview, Idaho.',
+        additionalInfo: 'React | Bootstrap | JavaScript',
+        url:'https://goobber33.github.io/Jeff-Barden-Portfolio/',
+        github:'https://github.com/Goobber33/Jeff-Barden-Portfolio'
     },
 ];
 
@@ -136,7 +137,7 @@ const ProjectsPage = () => {
                                 </div>
                                 <CardContent className="p-4 font-sans flex-grow">
                                     <CardDescription className="text-lg">{project.description}</CardDescription>
-                                    <p className="mt-2">{project.details}</p>
+                                    <p className="mt-2">{(project as { title: string; description: string; additionalInfo: string; url: string; github: string; details: string }).details}</p>
                                 </CardContent>
                                 <CardFooter className="p-4 font-sans">
                                     <p>{project.additionalInfo}</p>
