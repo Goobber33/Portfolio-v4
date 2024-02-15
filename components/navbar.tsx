@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Home from "@/components/home";
 import About from "@/components/about";
 import Projects from "@/components/projects";
+import Contact from "@/components/contact";
 
 export default function Navbar() {
     const [currentTab, setCurrentTab] = useState('home');
@@ -63,6 +64,9 @@ export default function Navbar() {
                 </TabsContent>
                 <TabsContent value="projects">
                     <Projects />
+                </TabsContent>
+                <TabsContent value="contact">
+                    <Contact />
                 </TabsContent>
             </Tabs>
         </div>
