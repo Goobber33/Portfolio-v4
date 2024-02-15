@@ -49,24 +49,25 @@ const initialProjects = [
 
 const additionalProjects = [
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
-        url: "https://portfolio-v4-beta-steel.vercel.app/",
-        github: 'https://github.com/Goobber33/Portfolio-v4'
+        title: 'Home Prices',
+        description: 'React Native Project for searching house prices and interest rates in a searched area.',
+        additionalInfo: 'React Native | JavaScript',
+        url:'https://github.com/Goobber33/Home-Prices',
+        github: 'https://github.com/Goobber33/Home-Prices'
     },
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        title: 'Web Scraper',
+        description: 'This project is a web scraper that fetches data from various websites and saves the extracted data to a MongoDB Atlas database.',
+        additionalInfo: 'TypeScript | React | Node.js | MongoDB',
+        url:'https://goobber33.github.io/Web-Scraper/',
+        github:'https://github.com/Goobber33/Web-Scraper'
     },
     {
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        details: 'More details about Project 2.',
-        additionalInfo: 'Additional Info for Project 2',
+        title: 'Your Own SVG Logo',
+        description: 'This application will create a custom SVG logo for you!',
+        additionalInfo: 'JavaScript',
+        url:'https://github.com/Goobber33/Your-own-SVG-Logo',
+        github:'https://github.com/Goobber33/Your-own-SVG-Logo'
     },
 ];
 
@@ -173,7 +174,7 @@ const ProjectsPage = () => {
                                 </div>
                                 <CardContent className="p-4 font-sans flex-grow">
                                     <CardDescription className="text-lg">{project.description}</CardDescription>
-                                    <p className="mt-2">{project.details}</p>
+                                    <p className="mt-2">{(project as { title: string; description: string; additionalInfo: string; url?: string; github?: string; details: string }).details ?? ""}</p>
                                 </CardContent>
                                 <CardFooter className="p-4 font-sans">
                                     <p>{project.additionalInfo}</p>
