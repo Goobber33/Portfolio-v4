@@ -17,7 +17,7 @@ const initialProjects = [
         description: 'Quantum IQ is a state-of-the-art SaaS AI platform designed to streamline and enhance a variety of AI functionalities.',
         additionalInfo: 'React | Next.js | Tailwind.css | Prism | Stripe',
         url: 'https://quantum-ai-kappa.vercel.app/',
-        github: 'https://github.com/Goobber33/Portfolio-v4'
+        github: 'https://github.com/Goobber33/Quantum-AI'
     },
     {
         title: 'Knowledge Base Back End',
@@ -35,7 +35,7 @@ const initialProjects = [
         title: 'The Shed',
         description: 'This project is a web application for The Shed, a local gym in Sandpoint, Idaho owned by Jen Barden.',
         additionalInfo: 'React | Bootstrap | JavaScript',
-        url:'https://goobber33.github.io/The-Shed/',
+        url:'https://the-shed-kappa.vercel.app/',
         github:'https://github.com/Goobber33/The-Shed'
     },
     {
